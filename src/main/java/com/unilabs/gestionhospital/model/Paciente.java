@@ -1,4 +1,4 @@
-package com.unilabs.gestionhospital.Clases.PersonaDerivados;
+package com.unilabs.gestionhospital.model;
 
 public class Paciente extends Persona implements Cloneable{
     public Paciente(String nombre, byte edad, String ID, String telefono) {

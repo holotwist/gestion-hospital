@@ -1,4 +1,4 @@
-package com.unilabs.gestionhospital.Clases.PersonaDerivados;
+package com.unilabs.gestionhospital.model;
 
 public class Medico extends Persona {
     private String especialidad;

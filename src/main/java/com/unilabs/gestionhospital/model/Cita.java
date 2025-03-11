@@ -1,7 +1,7 @@
-package com.unilabs.gestionhospital.Clases.Citas;
+package com.unilabs.gestionhospital.model;
 
-import com.unilabs.gestionhospital.Clases.PersonaDerivados.Medico;
-import com.unilabs.gestionhospital.Clases.PersonaDerivados.Paciente;
+import com.unilabs.gestionhospital.model.Medico;
+import com.unilabs.gestionhospital.model.Paciente;
 
 import java.time.LocalDate;
 import java.time.LocalTime;

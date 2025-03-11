@@ -1,4 +1,6 @@
-package com.unilabs.gestionhospital.Clases.Citas;
+package com.unilabs.gestionhospital.model.gestor;
+
+import com.unilabs.gestionhospital.model.Cita;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

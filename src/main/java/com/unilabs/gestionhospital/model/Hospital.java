@@ -1,4 +1,4 @@
-package com.unilabs.gestionhospital.Clases; // Adjust package as needed
+package com.unilabs.gestionhospital.model;
 
 public class Hospital {
 

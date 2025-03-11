@@ -1,4 +1,4 @@
-package com.unilabs.gestionhospital.Clases.Enfermedad_Y_Medicamentos;
+package com.unilabs.gestionhospital.model;
 
 public class Enfermedad implements Cloneable {
     private String nombre;
