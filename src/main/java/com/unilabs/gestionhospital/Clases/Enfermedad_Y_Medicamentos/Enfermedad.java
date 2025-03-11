@@ -38,7 +38,6 @@ public class Enfermedad implements Cloneable {
     @Override
     public Enfermedad clone() throws CloneNotSupportedException {
         try {
-            // TODO: copy mutable state here, so the clone can't change the internals of the original
             return (Enfermedad) super.clone();
         } catch (CloneNotSupportedException e) {
             throw new AssertionError();

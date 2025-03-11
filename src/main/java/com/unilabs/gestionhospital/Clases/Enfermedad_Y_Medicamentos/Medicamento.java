@@ -56,7 +56,6 @@ public class Medicamento implements Cloneable {
     @Override
     public Medicamento clone() {
         try {
-            // TODO: copy mutable state here, so the clone can't change the internals of the original
             return (Medicamento) super.clone();
         } catch (CloneNotSupportedException e) {
             throw new AssertionError();
