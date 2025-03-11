@@ -1,11 +1,16 @@
 package com.unilabs.gestionhospital.model.gestor;
 
 import com.unilabs.gestionhospital.model.Paciente;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class GestorPacientes {
+public final class GestorPacientes {  // La clase es final, evita ser heredada
+
+    private GestorPacientes() {
+        // Constructor privado para evitar instanciación
+        throw new AssertionError("GestorPacientes no debe ser instanciado.");
+    }
+
     public static List<Paciente> PacientesPalindromos(List<Paciente> pacientes) {
         List<Paciente> pacientesPalindromos = new ArrayList<>();
 
@@ -55,5 +60,3 @@ public class GestorPacientes {
         return false;
     }
 }
-
-

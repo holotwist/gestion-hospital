@@ -1,5 +1,8 @@
 package com.unilabs.gestionhospital.model;
 
+import lombok.Getter;
+
+@Getter
 public class Medicamento implements Cloneable {
     private String nombre;
     private String descripcion;
@@ -19,38 +22,6 @@ public class Medicamento implements Cloneable {
         this.duracion = duracion;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public String getDosis() {
-        return dosis;
-    }
-
-    public String getFrecuencia() {
-        return frecuencia;
-    }
-
-    public String getDuracion() {
-        return duracion;
-    }
-
-    public String getFechaInicio() {
-        return fechaInicio;
-    }
-
-    public String getFechaFin() {
-        return fechaFin;
     }
 
     @Override
