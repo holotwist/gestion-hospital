@@ -1,4 +1,6 @@
-package com.unilabs.gestionhospital.Clases.PersonaDerivados;
+package com.unilabs.gestionhospital.model.gestor;
+
+import com.unilabs.gestionhospital.model.Paciente;
 
 import java.util.ArrayList;
 import java.util.List;

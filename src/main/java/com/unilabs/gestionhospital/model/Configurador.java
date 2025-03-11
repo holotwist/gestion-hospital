@@ -1,4 +1,4 @@
-package com.unilabs.gestionhospital.Clases;
+package com.unilabs.gestionhospital.model;
 
 public class Configurador {
     public void configurarHospital(Hospital hospital, String nombre, String direccion) {
