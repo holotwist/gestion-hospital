@@ -1,5 +1,10 @@
 package com.unilabs.gestionhospital.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
 public class Hospital {
 
     private static Hospital instance;
@@ -18,23 +23,6 @@ public class Hospital {
             instance = new Hospital();
         }
         return instance;
-    }
-
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
     }
 
 

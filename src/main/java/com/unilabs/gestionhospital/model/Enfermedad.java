@@ -1,5 +1,10 @@
 package com.unilabs.gestionhospital.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
 public class Enfermedad implements Cloneable {
     private String nombre;
     private String descripcion;
@@ -8,30 +13,6 @@ public class Enfermedad implements Cloneable {
     public Enfermedad(String nombre, String descripcion, Medicamento medicamento) {
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.medicamento = medicamento;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public Medicamento getMedicamento() {
-        return medicamento;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public void setMedicamento(Medicamento medicamento) {
         this.medicamento = medicamento;
     }
 

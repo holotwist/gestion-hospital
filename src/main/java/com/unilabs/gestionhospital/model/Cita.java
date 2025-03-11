@@ -1,16 +1,30 @@
 package com.unilabs.gestionhospital.model;
 
-import com.unilabs.gestionhospital.model.Medico;
-import com.unilabs.gestionhospital.model.Paciente;
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
-
+@Entity
+@Data
+@NoArgsConstructor
 public class Cita {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private LocalDate fecha;
     private LocalTime hora;
     private String motivo;
+
+    @ManyToOne
+    @JoinColumn(name = "paciente_id")
     private Paciente paciente;
+
+    @ManyToOne
+    @JoinColumn(name = "medico_id")
     private Medico medico;
 
     public Cita(LocalDate fecha, LocalTime hora, String motivo, Paciente paciente, Medico medico) {
@@ -18,46 +32,6 @@ public class Cita {
         this.hora = hora;
         this.motivo = motivo;
         this.paciente = paciente;
-        this.medico = medico;
-    }
-
-    public LocalDate getFecha() {
-        return fecha;
-    }
-
-    public LocalTime getHora() {
-        return hora;
-    }
-
-    public String getMotivo() {
-        return motivo;
-    }
-
-    public Paciente getPaciente() {
-        return paciente;
-    }
-
-    public Medico getMedico() {
-        return medico;
-    }
-
-    public void setFecha(LocalDate fecha) {
-        this.fecha = fecha;
-    }
-
-    public void setHora(LocalTime hora) {
-        this.hora = hora;
-    }
-
-    public void setMotivo(String motivo) {
-        this.motivo = motivo;
-    }
-
-    public void setPaciente(Paciente paciente) {
-        this.paciente = paciente;
-    }
-
-    public void setMedico(Medico medico) {
         this.medico = medico;
     }
 }

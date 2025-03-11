@@ -1,28 +1,29 @@
 package com.unilabs.gestionhospital.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+
+@EqualsAndHashCode(callSuper = true)
+@Entity
+@Data
+@NoArgsConstructor
 public class Medico extends Persona {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String especialidad;
     private String horario;
 
-    public Medico(String nombre, byte edad, String ID, String telefono, String especialidad, String horario){
-        super(nombre, edad, ID, telefono);
+    public Medico(String nombre, byte edad, String identificacion, String telefono, String especialidad, String horario){
+        super(nombre, edad, identificacion, telefono);
         this.especialidad = especialidad;
-        this.horario = horario;
-    }
-
-    public String getEspecialidad() {
-        return especialidad;
-    }
-
-    public void setEspecialidad(String especialidad) {
-        this.especialidad = especialidad;
-    }
-
-    public String getHorario() {
-        return horario;
-    }
-
-    public void setHorario(String horario) {
         this.horario = horario;
     }
 
