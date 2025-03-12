@@ -21,6 +21,7 @@ import '@vaadin/button/src/vaadin-button.js';
 import '@vaadin/text-field/src/vaadin-text-field.js';
 import '@vaadin/date-picker/src/vaadin-date-picker.js';
 import 'Frontend/generated/jar-resources/datepickerConnector.js';
+import '@vaadin/text-area/src/vaadin-text-area.js';
 import '@vaadin/vertical-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/app-layout/src/vaadin-drawer-toggle.js';
 import '@vaadin/horizontal-layout/src/vaadin-horizontal-layout.js';
@@ -40,20 +41,23 @@ import 'Frontend/generated/jar-resources/ReactRouterOutletElement.tsx';
 
 const loadOnDemand = (key) => {
   const pending = [];
-  if (key === '01bd7b242815f7aca03e27b84c7eeadb45c734ff1f1f368892cbac1e858b1550') {
-    pending.push(import('./chunks/chunk-6262089108668c53d9777c0c54a84b2c94c42139af24f817fe06754afebbd3de.js'));
+  if (key === '6b48ac74870602b60d78e6d86683b05ba206deebea557c0fce7f7ed935133112') {
+    pending.push(import('./chunks/chunk-46514a72285d502e574927cfbce84a95dafb27c5f1dfc97946a0485d20f2f975.js'));
   }
   if (key === 'e412ebae2b78ea66fb6c94a7586a3989e9a48b66f880bf41aa096cec84f27775') {
     pending.push(import('./chunks/chunk-3b777601f3bb04420860c1641e1d07c85eebc818553a74714140f5a3406e8121.js'));
   }
-  if (key === '6b48ac74870602b60d78e6d86683b05ba206deebea557c0fce7f7ed935133112') {
-    pending.push(import('./chunks/chunk-46514a72285d502e574927cfbce84a95dafb27c5f1dfc97946a0485d20f2f975.js'));
-  }
-  if (key === '8ff4c7d1828568c2ebf890efbd2ef80002add902124863b09b9207e8fe8f9bd8') {
-    pending.push(import('./chunks/chunk-1d87ef1e7c8508d913d536a4958af1c223f693dc3055dee6aac63c434e5bc6c9.js'));
+  if (key === '97459fe2548eb366eee9493e47e78014487d6a1f433dcbc7414cd009cc1f1863') {
+    pending.push(import('./chunks/chunk-4c48f3505ce99e5a0088a8e2f56507cea3966887a4e2390499776e696195d4c1.js'));
   }
   if (key === 'eb477a6b55fd0a852073127e32688982e7f54415309cf27ea44f20b9e1a2244b') {
     pending.push(import('./chunks/chunk-dc1b4b57a7521276b635cb548e20eac88b8b12bddd1e879a4f92dbcffca93530.js'));
+  }
+  if (key === '01bd7b242815f7aca03e27b84c7eeadb45c734ff1f1f368892cbac1e858b1550') {
+    pending.push(import('./chunks/chunk-6262089108668c53d9777c0c54a84b2c94c42139af24f817fe06754afebbd3de.js'));
+  }
+  if (key === '8ff4c7d1828568c2ebf890efbd2ef80002add902124863b09b9207e8fe8f9bd8') {
+    pending.push(import('./chunks/chunk-1d87ef1e7c8508d913d536a4958af1c223f693dc3055dee6aac63c434e5bc6c9.js'));
   }
   return Promise.all(pending);
 }

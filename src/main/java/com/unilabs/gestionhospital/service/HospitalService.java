@@ -1,12 +1,8 @@
 package com.unilabs.gestionhospital.service;
 
-import com.unilabs.gestionhospital.model.Cita;
-import com.unilabs.gestionhospital.model.Medico;
-import com.unilabs.gestionhospital.model.Paciente;
+import com.unilabs.gestionhospital.model.*;
 import com.unilabs.gestionhospital.model.gestor.GestorPacientes;
-import com.unilabs.gestionhospital.repository.CitaRepository;
-import com.unilabs.gestionhospital.repository.MedicoRepository;
-import com.unilabs.gestionhospital.repository.PacienteRepository;
+import com.unilabs.gestionhospital.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,6 +21,12 @@ public class HospitalService {
     private MedicoRepository medicoRepository;
     @Autowired
     private CitaRepository citaRepository;
+    @Autowired
+    private HistorialMedicoRepository historialMedicoRepository;
+    @Autowired
+    private MedicamentoRepository medicamentoRepository;
+    @Autowired
+    private EnfermedadRepository enfermedadRepository;
 
 
     // CRUD Paciente
@@ -88,6 +90,45 @@ public class HospitalService {
         return citaRepository.findByFecha(fecha);
     }
 
+
+    // CRUD HistorialMedico
+    @Transactional
+    public HistorialMedico guardarHistorialMedico(HistorialMedico historialMedico) {
+        if (historialMedico.getEnfermedades() == null) {
+            historialMedico.setEnfermedades(new ArrayList<>());
+        }
+        if(historialMedico.getMedicamentos() == null){
+            historialMedico.setMedicamentos(new ArrayList<>());
+        }
+
+        return historialMedicoRepository.save(historialMedico);
+    }
+
+    @Transactional(readOnly = true)
+    public HistorialMedico obtenerHistorialMedico(Long id) {
+        return historialMedicoRepository.findById(id).orElse(null);
+    }
+
+    @Transactional(readOnly = true)
+    public HistorialMedico obtenerHistorialMedicoPorPaciente(Paciente paciente) {
+        return historialMedicoRepository.findByPaciente(paciente).orElse(null);
+    }
+
+    @Transactional
+    public void eliminarHistorialMedico(Long id) {
+        historialMedicoRepository.deleteById(id);
+    }
+    @Transactional
+    public void eliminarMedicamentoDeHistorial(Long historialId, Long medicamentoId) {
+        HistorialMedico historial = historialMedicoRepository.findById(historialId).orElse(null);
+        if (historial != null) {
+            Medicamento medicamento = medicamentoRepository.findById(medicamentoId).orElse(null);
+            if (medicamento != null) {
+                historial.getMedicamentos().remove(medicamento);
+                historialMedicoRepository.save(historial); // Guarda los cambios
+            }
+        }
+    }
 
 
     // GestorPacientes

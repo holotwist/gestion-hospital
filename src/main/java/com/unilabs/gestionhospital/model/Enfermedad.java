@@ -1,27 +1,28 @@
 package com.unilabs.gestionhospital.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.NoArgsConstructor;
 
+@Entity
 @Setter
 @Getter
-public class Enfermedad implements Cloneable {
+@NoArgsConstructor
+public class Enfermedad {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String nombre;
     private String descripcion;
-    private Medicamento medicamento;
 
-    public Enfermedad(String nombre, String descripcion, Medicamento medicamento) {
+    public Enfermedad(String nombre, String descripcion) {
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.medicamento = medicamento;
-    }
-
-    @Override
-    public Enfermedad clone() throws CloneNotSupportedException {
-        try {
-            return (Enfermedad) super.clone();
-        } catch (CloneNotSupportedException e) {
-            throw new AssertionError();
-        }
     }
 }
