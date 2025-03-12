@@ -27,8 +27,8 @@ Una empresa de gestión hospitalaria necesita un sistema para administrar la inf
     *   La clonación debe incluir:
         *   Nombre
         *   Edad
-        *   Historial de enfermedades (aunque no implementado completamente en este ejemplo)
-        *   Medicamentos (aunque no implementado completamente en este ejemplo)
+        *   Historial de enfermedades
+        *   Medicamentos
     *   El nuevo paciente (clon) debe ser personalizable sin afectar al paciente original.  El ID del clon debe ser diferente.
 
 ## Solución Implementada
